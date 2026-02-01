@@ -91,4 +91,4 @@ task-management/
 
 ## 👤 Author
 
-Ayush – Full Stack Developer (MERN), B.Tech CSE
+Ayush Kesharwani
