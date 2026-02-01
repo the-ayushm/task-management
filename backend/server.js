@@ -12,7 +12,9 @@ const app = express();
 connectDB();
 
 app.use(cors({
-  origin: "https://task-management-ivory-five.vercel.app" || 'http://localhost:3000',
+  origin: process.env.NODE_ENV === 'production' 
+    ? "https://task-management-ivory-five.vercel.app"
+    : 'http://localhost:3000',
   credentials: true,
 }));
 app.use(express.json());
