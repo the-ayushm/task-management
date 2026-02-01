@@ -11,10 +11,19 @@ const app = express();
 
 connectDB();
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://task-management-ivory-five.vercel.app'
+];
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? "https://task-management-ivory-five.vercel.app"
-    : 'http://localhost:3000',
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
