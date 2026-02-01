@@ -58,28 +58,36 @@ task-management/
 
 ## 🚀 Getting Started
 
-**Backend**
+**Backend Setup**
 
-1. Create `backend/.env` with:
-   - NODE_ENV=development
-   - PORT=5000
-   - MONGODB_URI=<your-mongodb-uri>
-   - JWT_SECRET=<your-secret>
-   - JWT_EXPIRE=7d
+1. Navigate to `backend/` directory
+2. Create `.env` file with:
+   ```
+   NODE_ENV=development
+   PORT=5000
+   MONGODB_URI=<your-mongodb-uri>
+   JWT_SECRET=<your-secret>
+   JWT_EXPIRE=7d
+   ```
+3. Run: `node server.js`
+   - Server runs on http://localhost:5000
 
-2. Start server from `backend/`.
+**Frontend Setup**
 
-**Frontend**
+1. Navigate to `frontend/` directory
+2. Create `.env` file with:
+   ```
+   VITE_API_URL=http://localhost:5000/api
+   ```
+3. Run: `npm run dev`
+   - Dev server runs on http://localhost:3000
 
-1. Create `frontend/.env` with:
-   - VITE_API_URL=http://localhost:5000/api
+## ✅ Assignment Coverage
 
-2. Start dev server from `frontend/`.
-
-**Local URLs**
-- Backend: http://localhost:5000
-- Frontend: http://localhost:3000
-
+- MERN full-stack architecture
+- JWT-based authentication with protected routes
+- Task CRUD with status workflow
+- User-specific data isolation
 
 ## 👤 Author
 
